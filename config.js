@@ -18,7 +18,7 @@ module.exports = {
 
     mongoCfg: {
         hostname: 'localhost',
-        port: 27017,
+        port: 27117,
         db: 'recall'
     },
 
