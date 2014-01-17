@@ -1,0 +1,36 @@
+doctype
+html
+  head
+        title CodeCard Register
+        link(rel='stylesheet', href='/resources/form.css')
+        link(href='/resources/icons/code.ico', type='image/x-icon', rel='shortcut icon')
+        style(type='text/css')
+            .border,
+            .rain{
+                height: 270px;
+                width: 320px;
+            }
+        script(src='/bootstrap/js/jquery.js')
+        script(src='/resources/form.js')
+  body#home
+        .header
+            span Join Now!
+        - if(errorMsg)
+        .errorMsg #{errorMsg}
+        .rain
+            .border.start
+                form(action='/regist',method='post')
+                    label username
+                    input(type='text', name='username')
+                    label password
+                    input(type='password', name='password')
+                    label repassword
+                    input(type='password', name='repassword')
+                    button#login.orange(type='submit') Regist
+                    a#login.black(href='/login') Login
+        .footer Copyright 2004-2012. All rights reserved. Joey, NQ Mobile!
+
+
+
+
+

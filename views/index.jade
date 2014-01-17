@@ -1,0 +1,46 @@
+doctype
+html
+    head
+        title CodeCard
+        meta(charset='UTF-8')
+        link(href='/resources/icons/code.ico', type='image/x-icon', rel='shortcut icon')
+        style(type='text/css')
+            #loading {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                margin-top: -70px
+            }
+            #loading .title {
+                font-family: "Exo", sans-serif;
+                font-size: 2em;
+                color: gray;
+                text-align: center;
+                white-space: nowrap;
+                display: block
+            }
+            #loading .logo {
+                background: url(resources/icons/loading.gif) no-repeat center;
+                display: block;
+                height: 120px
+            }
+
+        link(rel='stylesheet', href='/resources/kitchensink/kitchensink.css')
+        link(rel='stylesheet', href='/codemirror-3.20.0/lib/codemirror.css')
+        link(rel='stylesheet', href='/codemirror-3.20.0/theme/monokai.css')
+        link(rel='stylesheet', href='/codemirror-3.20.0/theme/eclipse.css')
+        link(rel='stylesheet', href='/codemirror-3.20.0/theme/xq-dark.css')
+        link(rel='stylesheet', href='/resources/app.css')
+        script(type='text/javascript')
+            user = !{JSON.stringify(user)}
+    body
+       #loading
+        span.title CodeCard 2.0
+        span.logo
+        script(src='/extjs4.2/ext-all.js')
+        script(src='/extjs4.2/ext-theme-neptune.js')
+        script(src='/resources/easy.js')
+        script(src='/codemirror-3.20.0/lib/codemirror.js')
+        script(src='/codemirror-3.20.0/addon/mode/loadmode.js')
+        script(src='/codemirror-3.20.0/mode/meta.js')
+        script(src='app/app.js')
