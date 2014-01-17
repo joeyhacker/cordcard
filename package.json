@@ -2,9 +2,9 @@
     "name": "codecard",
     "version": "1.0.0",
     "dependencies": {
-		"express": "3.4.8",
-		"mongoose": "3.8.4",
-		"jade": "0.35.0"
+		"express": "",
+		"mongoose": "",
+		"jade": ""
     }
 }
 
