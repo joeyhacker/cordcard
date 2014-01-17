@@ -25,9 +25,14 @@ module.exports = {
 
     getMongoUrl: function(){
         var obj;
-        if(process.env.VCAP_SERVICES){
-            var env = JSON.parse(process.env.VCAP_SERVICES);
-            obj = env['mongodb-2.0'][0]['credentials'];
+        if(process.env.MOPAAS_MONGODB6592_HOST){
+            /*var env = JSON.parse(process.env.VCAP_SERVICES);
+            obj = env['mongodb-2.0'][0]['credentials'];*/
+			obj.username = process.env.MOPAAS_MONGODB6592_USERNAME;
+			obj.password = process.env.MOPAAS_MONGODB6592_PASSWORD;
+			obj.hostname = process.env.MOPAAS_MONGODB6592_HOSTNAME;
+			obj.port = process.env.MOPAAS_MONGODB6592_PORT;
+			obj.db = process.env.MOPAAS_MONGODB6592_NAME;
             console.log('start mongo in cloud ... ');
         }else{
             obj = this.mongoCfg;

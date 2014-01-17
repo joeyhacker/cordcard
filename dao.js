@@ -226,7 +226,7 @@ var Dao = function(){
                 username: username
             }, callback);
         },
-
+		
         getSnippets: function(start, limit, filter, callback){
             Model.Snippet.find(filter).skip(start).limit(limit).select('title short createTime lang').sort('-createTime').exec(callback);
         },

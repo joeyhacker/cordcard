@@ -340,6 +340,17 @@ function auth(req, res, next){
    }
 }
 
+function init(){
+	console.log('init');
+	Dao.getUserByUsername('admin', function(err, user){
+		if(!user){
+			Dao.createUser({
+				username: 'admin',
+				password: '123456'
+			});
+		}
+	})
+}
 
 module.exports = function(app){
     app.get('/', auth, index);
@@ -366,3 +377,6 @@ module.exports = function(app){
     app.post('/tag/create', auth, tag_create);
     app.post('/tag/remove', auth, tag_remove);
 }
+
+//~ init
+init();
